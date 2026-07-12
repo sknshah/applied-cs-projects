@@ -1,10 +1,10 @@
 # [Game Name]
 
-*Replace this file's contents once the project is built. This project should be designed from scratch — original rules/spec and original class design — not a reworded version of any graded assignment.*
+*Replace this file's contents once the project is built. Designed from scratch, with an original rules/spec and class design.*
 
-## Inspired by
+## Concept
 
-One line naming the general concept area (e.g. "grid-based strategy games," "turn-based combat systems") without naming a specific course or assignment.
+One line naming the general concept area (e.g. "grid-based strategy games," "turn-based combat systems").
 
 ## Design
 
