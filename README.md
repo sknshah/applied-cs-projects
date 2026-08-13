@@ -1,4 +1,4 @@
-# Applied CS Projects
+# CS Projects
 
 Small systems and algorithms projects — game design, data structures, parsers, and similar problems — each built from scratch as a standalone implementation with an original design and test suite.
 
