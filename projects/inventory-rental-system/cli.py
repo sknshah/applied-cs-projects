@@ -57,7 +57,8 @@ def handle_return(conn, member):
 
         # if someone was waiting on this item, let them know
         waiting_member_id = service.fulfill_next_reservation(conn, rental.item_id)
-        if waiting_member_id:            print(f"member {waiting_member_id} was next in line and has been notified")
+        if waiting_member_id:
+            print(f"member {waiting_member_id} was next in line and has been notified")
     except (service.RentalNotFoundError, PermissionError, ValueError) as error:
         print(f"could not process return: {error}")
 
