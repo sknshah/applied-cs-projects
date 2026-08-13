@@ -57,8 +57,7 @@ def handle_return(conn, member):
 
         # if someone was waiting on this item, let them know
         waiting_member_id = service.fulfill_next_reservation(conn, rental.item_id)
-        if waiting_member_id:
-            print(f"member {waiting_member_id} was next in line and has been notified")
+        if waiting_member_id:            print(f"member {waiting_member_id} was next in line and has been notified")
     except (service.RentalNotFoundError, PermissionError, ValueError) as error:
         print(f"could not process return: {error}")
 
@@ -66,21 +65,18 @@ def handle_return(conn, member):
 def handle_reports(conn, member):
     try:
         overdue = reports.overdue_report(conn, member)
-        print(f"
-overdue rentals: {len(overdue)}")
+        print(f"\noverdue rentals: {len(overdue)}")
         for row in overdue:
             print(f"  {row['item_name']} rented by {row['member_name']}, due {row['due_date']}")
 
         utilization = reports.utilization_report(conn, member)
-        print("
-utilization by item:")
+        print("\nutilization by item:")
         for row in utilization:
             print(f"  {row['item_name']}: {row['times_rented']} rentals")
 
         if member.role == "admin":
             total = reports.revenue_report(conn, member)
-            print(f"
-total late fee revenue: ${total:.2f}")
+            print(f"\ntotal late fee revenue: ${total:.2f}")
     except PermissionError as error:
         print(f"not permitted: {error}")
 
@@ -102,8 +98,7 @@ def main():
     }
 
     while True:
-        print("
-what would you like to do?")
+        print("\nwhat would you like to do?")
         for key, (label, _) in menu.items():
             print(f"  {key}. {label}")
 
